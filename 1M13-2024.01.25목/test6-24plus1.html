@@ -3,17 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>test6-24 타이틀</title>
+  <title>test6-24plus1 타이틀</title>
   <script>
-    function gugudan(inputNum) {
-      let num1 = prompt("구구단 몇 단을 원하세요", "");
-      num1 = parseInt(num1);
-
-      if (isFinite(num1) || ) {
-        for (let i = 1; i <= 9; i++) {
-          
-          
-        }
+    function gugudan() {
+      for (let i = 2; i <= 9; i++) {
+        for (let m = 1; m <= 9; m++) {
+          document.write(i + " * " + m + " = " + (i * m) + "<br>");
+        }    
+        document.write("<hr>")
       }
     }
   </script>
@@ -22,6 +19,7 @@
   <h3>구구단 출력 함수 만들기</h3>
   <hr>
   <script>
+    gugudan();
   </script>
 </body>
 </html>
