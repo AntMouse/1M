@@ -65,25 +65,24 @@
         }
       }
 
-      
-
       if (lottoCheck == 4) {
 
-          document.write("축하합니다! 당첨되었습니다. 선택한 번호 ");
+        document.write("축하합니다! 당첨되었습니다. 선택한 번호 ");
 
-          for (let i = 0; i < 4; i++) {
-            if (i == 3) {
-              document.write(lottoUserSelect[i] + "");
-            } else {
-              document.write(lottoUserSelect[i] + ", ");
-            }  
-          }
+        for (let i = 0; i < 4; i++) {
+          if (i == 3) {
+            document.write(lottoUserSelect[i] + "");
+          } else {
+            document.write(lottoUserSelect[i] + ", ");
+          }  
+        }
 
-          document.write("과 일치합니다. 총 " + lottoTry + "번 돌렸습니다.");
-          window.scrollTo(0, document.body.scrollHeight);
-          lottoCondition = 1;
+        document.write("과 일치합니다. 총 " + lottoTry + "번 돌렸습니다.");
+        window.scrollTo(0, document.body.scrollHeight);
+        lottoCondition = 1;
       }
     }
+    window.scrollTo(0, document.body.scrollHeight);
   </script>
 </body>
 </html>
