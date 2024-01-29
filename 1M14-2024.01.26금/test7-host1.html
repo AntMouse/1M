@@ -7,70 +7,40 @@
 </head>
 <body>
   <script>
-
-    function birthday(name, dbirth) {
-      let today = new Date();
-      if(this.dbirth.getMonth() == today.getMonth()
-        && this.dbirh.getDate() == today.getDate())
-        doc
-    }
-
-    let studnt = new Object();
-    studnt.name = "이재일";
-    studnt.dbirth = new Date("2000.01.26");
-    studnt.birthday = birthday;
-
-
     let student = new Array(); // 학생 배열 선언 (숫자 없이 그냥 사용하기로)
     let studentNameList = new Array(); // 학생 이름 목록
 
     for (let i = 0; i < 24; i++) {
-      studentNameList[i] = (i + 1) + " 번 학생";   
-    }
+      studentNameList[i] = (i + 1) + " 번 학생";  
 
-    let studentDBirthM = new Array(); // 생일 월,일 목록
-    let studentDBirthD = new Array();
-    
-    let today = new Date(); // 날짜 비교용
+      let currentDate = new Date("2000.01.10");
+      let newDate = new Date(currentDate);
+      newDate.setDate(currentDate.getDate() + i);
 
-    for (let i = 0; i < studentNameList.length; i++) {
-      let dBirthM = i + 1; // 월 
-      while (dBirthM > 12) {
-        dBirthM = 1;
-      }
-
-      let dBirthD = i + 10; // 일
-      while (dBirthD > 29) {
-        dBirthD = 26;
-      }
-
-      studentDBirthM[i] = dBirthM;
-      studentDBirthD[i] = dBirthD;
-    }
-
-    for (let i = 0; i < studentNameList.length; i++) {
       student[i] = {
-        name : studentNameList[i],
-        birthdayM : studentDBirthM[i],
-        birthdayD : studentDBirthD[i],
-        birthdayCheckFun : function (studentName) {
-          if (studentName == student[i].name) {
-            if (student[i].birthdayM == today.getMonth() + 1 &&
-                student[i].birthdayD == today.getDate()) {
-
-                document.write(student[i].name + "님 생일을 축하합니다.");
-            } else {
-                document.write(student[i].name + "님은 생일이 아닙니다.");
-            }
-          }   
-        }
+        name: studentNameList[i],
+        birthday: newDate // 학생 객체에서 생일 데이터
       };
+    }
+
+    function birthdayCheck(student, selectedStudentName) {
+      if (selectedStudentName == student.name) {
+        let today = new Date();
+          if (
+              student.birthday.getMonth() == today.getMonth() &&
+              student.birthday.getDate() == today.getDate()
+          ) {
+              document.write(student.name + "님 생일을 축하합니다.");
+          } else {
+              document.write(student.name + "님은 생일이 아닙니다.");
+          }
+      }
     }
 
     let select = prompt("양식에 맞춰 몇 번 학생으로 할지 입력하세요", "X 번 학생");
 
     for (let i = 0; i < studentNameList.length; i++) {
-      student[i].birthdayCheckFun(select);
+        birthdayCheck(student[i], select);
     }
   </script>
 </body>
