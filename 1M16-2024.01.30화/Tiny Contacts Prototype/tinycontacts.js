@@ -13,8 +13,17 @@ function displayContactNotFound()
     alert("Not found");
 }
 
+
+
+
+let totalinform = new Array();
+
 function doSave() {
     alert("Saves a contact in the store");
+
+    let doSaveName = document.getElementById("name").value;
+    let doSaveAddress = document.getElementById("address").value;
+    let doSavePhone = document.getElementById("phone").value;
 }
 
 function doFind() {
