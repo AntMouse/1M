@@ -12,7 +12,7 @@
       } else {
         sum -= parseInt(cBox.value);
       }
-      document.getElementById("sumtext").value = sum;
+      document.getElementById("sumtext").value = sum.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
     }
   </script>
 </head>
