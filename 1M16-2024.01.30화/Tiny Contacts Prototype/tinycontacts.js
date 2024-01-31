@@ -52,7 +52,6 @@ function doSave() { // save 버튼 누르면 이거 실행 (따로 조건 필요
     
         // 메시지
         alert("Saves a contact in the store");
-    
     } else {
         // 중복일 경우 메시지
         alert("Error! This name already exists!");
