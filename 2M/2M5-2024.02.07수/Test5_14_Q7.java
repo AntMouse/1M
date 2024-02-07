@@ -45,7 +45,8 @@ public class Test5_14_Q7 {
 				if (currentHour == dinoMealtime[i][j]) {
 					dinoMealtimeCheck[i] = true;
 					currentHourCheck++;
-					System.out.println("현재 시간은 " + dinoInformation[i][0] + "의 식사 시간입니다.");
+					System.out.println("현재 시간은 " + dinoInformation[i][0] + "(" + 
+					dinoInformation[i][2]+ " 담당)" + "의 식사 시간입니다.");
 					break;
 				}
 			}	
@@ -55,17 +56,35 @@ public class Test5_14_Q7 {
 			System.out.println("해당 시간에는 식사하는 공룡이 없습니다.");
 		}
 		
-		int nameOverlapCheck = 0;
-		
 		totalLoop:
-		while (currentHourCheck > 1) {
+		while (currentHourCheck > 0) {
 			System.out.print("담당 종을 확인하기 위해 이름을 입력해주세요 : ");
 			String name = sc.nextLine();
 			boolean nameCheck = false;
+			int nameOverlapCheck = 0;
 			
 			for (int i = 0; i < dinoInformation.length; i++) {
 				if (name.equals(dinoInformation[i][2])) {
-					nameCheck = true;
+					if (dinoMealtimeCheck[i]) {
+						nameCheck = true;
+					} else {
+						System.out.println("해당 담당자가 관리하고 있는 공룡은" +
+						" 이 시간(" + currentHour + ")에는 식사를 하지 않습니다.");
+						while (true) {
+							System.out.print("다시 입력하려면 y, 아니면 n을 입력하세요 : ");
+							String reTryCheck = sc.nextLine();
+							if (reTryCheck.equals("y")) {
+								nameOverlapCheck = 0;
+								break;
+							} else if (reTryCheck.equals("n")) {
+								System.out.println("프로그램을 종료합니다.");
+								break totalLoop;
+							} else {
+								System.out.println("유효한 값이 아닙니다.");
+							}
+						}	
+					}
+					
 				} else if (!name.equals(dinoInformation[i][2])) {
 					nameOverlapCheck++;
 				}
