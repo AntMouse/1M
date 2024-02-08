@@ -7,7 +7,7 @@ public class Test4_21 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("직책 : ");
-		String jobTitle = sc.next();
+		String jobTitle = sc.nextLine();
 		boolean valueCheck = true;
 		
 		String jobMission = switch (jobTitle) {

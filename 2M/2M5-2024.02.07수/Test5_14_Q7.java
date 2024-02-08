@@ -37,7 +37,7 @@ public class Test5_14_Q7 {
 				{7, 14, 21},
 				{4, 10, 14, 15, 19}
 		};
-		boolean[] dinoMealtimeCheck = new boolean[5];
+		boolean[] dinoMealtimeCheck = new boolean[5]; // 5를 dinoInformation.length로 하는 게 더 좋음.
 		Arrays.fill(dinoMealtimeCheck, false);
 		
 		for (int i = 0; i < dinoMealtime.length; i++) {
