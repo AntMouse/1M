@@ -1,6 +1,7 @@
 package m2_02_13;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Test7_8_Q7 {
@@ -97,9 +98,17 @@ public class Test7_8_Q7 {
 				String inputValue1_2 = scanner.nextLine();
 				if (!(inputValue1_2.equals(null))) {
 					for (int i = 0; i < dinoList.length; i++) {
-						if (inputValue1_2.equals(dinoList[i])) {
-							System.out.println("해당 공룡은 이미 등록되어 있습니다. 다시 입력해주세요.");
-							break;
+						if (dinoList[i] != null) {
+							if (inputValue1_2.equals(dinoList[i])) {
+								System.out.println("해당 공룡은 이미 등록되어 있습니다. 다시 입력해주세요.");
+								break;
+							}
+						}
+					}
+					
+					for (int i = 0; i < dinoList.length; i++) {
+						if (dinoList[i].equals(null)) {
+							dinoList[i] = inputValue1_2;
 						}
 					}
 					System.out.println("공룡이 추가되었습니다.");
@@ -111,6 +120,7 @@ public class Test7_8_Q7 {
 				if (!(inputValue1_3.equals(null))) {
 					for (int i = 0; i < dinoList.length; i++) {
 						if (inputValue1_3.equals(dinoList[i])) {
+							dinoList[i] = null;
 							System.out.println("해당 공룡을 제거했습니다.");
 							break totalLoop;
 						}
