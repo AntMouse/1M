@@ -12,7 +12,7 @@ public class Test8_1 {
 	}
 
 	public static void main(String[] args) {
-		Person p = new Person();
+		Person2 p = new Person2();
 
 	}
 
