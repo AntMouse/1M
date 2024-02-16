@@ -32,7 +32,6 @@ public class Test8_Q8_Ticket {
 	}
 
 	public static void main(String[] args) {
-		
 
 	}
 

@@ -82,7 +82,7 @@ public class Test8_Project {
 			manageEmployees();
 			break;
 		case 3:
-			// manageTickets();
+			manageTickets();
 			break;
 		case 4:
 			// checkParkStatus();
@@ -288,6 +288,11 @@ public class Test8_Project {
 			System.out.println("잘못된 값입니다.");
 			break;
 		}
+	}
+	
+	// 케이스 3 티켓 관리
+	public void manageTickets() {
+		
 	}
 	
 }
