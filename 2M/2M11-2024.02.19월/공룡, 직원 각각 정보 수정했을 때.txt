@@ -1,0 +1,57 @@
+public void changeDinoName(int index, String newDinoName) {
+	    if (0 <= index && index < dino.length && dino[index] != null) {
+	        dino[index].changeDinoName(newDinoName);
+	        System.out.println("공룡의 이름이 성공적으로 수정되었습니다.");
+	    } else {
+	        System.out.println("유효하지 않은 인덱스이거나 수정할 공룡이 없습니다.");
+	    }
+	}
+
+	public void changeDinoAge(int index, int newDinoAge) {
+	    if (0 <= index && index < dino.length && dino[index] != null) {
+	        dino[index].changeDinoAge(newDinoAge);
+	        System.out.println("공룡의 나이가 성공적으로 수정되었습니다.");
+	    } else {
+	        System.out.println("유효하지 않은 인덱스이거나 수정할 공룡이 없습니다.");
+	    }
+	}
+
+	public void changeDinoSpecies(int index, String newDinoSpecies) {
+	    if (0 <= index && index < dino.length && dino[index] != null) {
+	        dino[index].changeDinoSpecies(newDinoSpecies);
+	        System.out.println("공룡의 종이 성공적으로 수정되었습니다.");
+	    } else {
+	        System.out.println("유효하지 않은 인덱스이거나 수정할 공룡이 없습니다.");
+	    }
+	}
+
+
+
+
+--------------------------------
+public void changeEmployeeName(int index, String newEmployeeName) {
+	    if (0 <= index && index < employee.length && employee[index] != null) {
+	        employee[index].changeEmployeeName(newEmployeeName);
+	        System.out.println("직원의 이름이 성공적으로 수정되었습니다.");
+	    } else {
+	        System.out.println("유효하지 않은 인덱스이거나 수정할 직원이 없습니다.");
+	    }
+	}
+
+	public void changeEmployeeJobTitle(int index, String newEmployeeJobTitle) {
+	    if (0 <= index && index < employee.length && employee[index] != null) {
+	        employee[index].changeEmployeeJobTitle(newEmployeeJobTitle);
+	        System.out.println("직원의 직무가 성공적으로 수정되었습니다.");
+	    } else {
+	        System.out.println("유효하지 않은 인덱스이거나 수정할 직원이 없습니다.");
+	    }
+	}
+
+	public void changeEmployeeYearsOfExperience(int index, int newEmployeeYearsOfExperience) {
+	    if (0 <= index && index < employee.length && employee[index] != null) {
+	        employee[index].changeEmployeeYearsOfExperience(newEmployeeYearsOfExperience);
+	        System.out.println("직원의 경력이 성공적으로 수정되었습니다.");
+	    } else {
+	        System.out.println("유효하지 않은 인덱스이거나 수정할 직원이 없습니다.");
+	    }
+	}
