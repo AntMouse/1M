@@ -1,0 +1,99 @@
+    // 익룡 추가
+    public void addFlyingDinosaur(int index, String size, String diet, int wingspan) {
+        if (0 <= index && index < dino.length) {
+            dino[index] = new FlyingDinosaur(size, diet, wingspan);
+        } else {
+        	indexErrorMessage();
+        }
+    }    
+    // 어룡 추가
+    public void addAquaticDinosaur(int index, String size, String diet, int swimSpeed) {
+        if (0 <= index && index < dino.length) {
+            dino[index] = new AquaticDinosaur(size, diet, swimSpeed);
+        } else {
+        	indexErrorMessage();
+        }
+    }
+    // 육상 공룡 추가
+    public void addWalkingDinosaur(int index, String size, String diet, int walkingSpeed) {
+        if (0 <= index && index < dino.length) {
+            dino[index] = new WalkingDinosaur(size, diet, walkingSpeed);
+        } else {
+        	indexErrorMessage();
+        }
+    }
+-----------------------------------------
+스위치 공룡 등록 원본
+			if (totalCheck) {
+				System.out.print("추가할 공룡의 크기를 입력하세요 : ");
+				String newDinoSize = scanner.nextLine();
+				System.out.print("추가할 공룡의 식성을 입력하세요 : ");
+				String newDinoDiet = scanner.nextLine();
+				
+				String newDinoType;		
+				while (true) {
+					System.out.print("추가할 공룡의 타입(익룡/어룡/육상공룡)을 입력하세요 : ");
+					newDinoType = scanner.nextLine();
+					
+					if (newDinoType.equals("익룡") || newDinoType.equals("어룡") || 
+						newDinoType.equals("육상공룡")) {
+						break;
+					} else {
+						System.out.println("잘못된 값입니다. 다시 입력해주세요.");
+					}
+				}
+				
+				if (newDinoType.equals("익룡")) {
+					System.out.print("익룡의 날개 길이를 입력하세요 : ");
+					int newWingspan = scanner.nextInt();
+					scanner.nextLine();	
+					parkAdministration.addFlyingDinosaur(newDinoIndex, newDinoSize, newDinoDiet, newWingspan);
+				} else if (newDinoType.equals("어룡")) {
+					System.out.print("어룡의 수영 속도를 입력하세요 : ");
+					int newSwimSpeed = scanner.nextInt();
+					scanner.nextLine();		
+					parkAdministration.addAquaticDinosaur(newDinoIndex, newDinoSize, newDinoDiet, newSwimSpeed);
+				} else if (newDinoType.equals("육상공룡")) {
+					System.out.print("육상공룡의 걷는 속도를 입력하세요 : ");
+					int newWalkingSpeed = scanner.nextInt();
+					scanner.nextLine();	
+					parkAdministration.addWalkingDinosaur(newDinoIndex, newDinoSize, newDinoDiet, newWalkingSpeed);
+				}
+------------------------------------------------------------
+		    if (changeDinoTypeValue.equals("익룡")) {
+		    	System.out.print("익룡의 날개 길이를 입력하세요 (수정하지 않으려면 엔터를 누르세요): ");
+				String wingspanInput = scanner.nextLine();
+				int changeWingspan;
+			    if (!wingspanInput.isEmpty()) {
+			    	changeWingspan = Integer.parseInt(wingspanInput);
+			    } else {
+			    	changeWingspan = -1; // 나이를 -1로 설정하여 입력이 없음을 나타냄
+			    }
+				scanner.nextLine();	
+				parkAdministration.allChangeDino
+				(changeDinoIndex, changeDinoSize, changeDinoDiet, changeDinoType, changeWingspan);
+			} else if (changeDinoTypeValue.equals("어룡")) {
+		    	System.out.print("어룡의 수영 속도를 입력하세요 (수정하지 않으려면 엔터를 누르세요): ");
+				String swimSpeedInput = scanner.nextLine();
+				int changeSwimSpeed;
+			    if (!swimSpeedInput.isEmpty()) {
+			    	changeSwimSpeed = Integer.parseInt(swimSpeedInput);
+			    } else {
+			    	changeSwimSpeed = -1; // 나이를 -1로 설정하여 입력이 없음을 나타냄
+			    }
+				scanner.nextLine();	
+				parkAdministration.allChangeDino
+				(changeDinoIndex, changeDinoSize, changeDinoDiet, changeDinoType, changeSwimSpeed);
+			} else if (changeDinoTypeValue.equals("육상공룡")) {
+		    	System.out.print("육상공룡의 걷는 속도를 입력하세요 (수정하지 않으려면 엔터를 누르세요): ");
+				String walkingSpeedInput = scanner.nextLine();
+				int changeWalkingSpeed;
+			    if (!walkingSpeedInput.isEmpty()) {
+			    	changeWalkingSpeed = Integer.parseInt(walkingSpeedInput);
+			    } else {
+			    	changeWalkingSpeed = -1; // 나이를 -1로 설정하여 입력이 없음을 나타냄
+			    }
+				scanner.nextLine();	
+				parkAdministration.allChangeDino
+				(changeDinoIndex, changeDinoSize, changeDinoDiet, changeDinoType, changeWalkingSpeed);
+			}
